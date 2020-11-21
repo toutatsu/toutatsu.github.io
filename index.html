@@ -1,53 +1,143 @@
 <!DOCTYPE html>
+<!--Document Type Definition HTML 5であることを明記-->
 <html lang="ja">
+<!--日本語-->
+
 <head>
+    <!--文字エンコーディングの指定-->
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--タイトル-->
     <title>top page</title>
+
+    <!--href:外部ソースのURL rel:現在のファイルとの関係-->
+
+    <!--favico-->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- css -->
     <link rel="stylesheet" href="index.css">
+
 </head>
+
 <body>
-    Hello Github Pages
 
-    <div class="grid_container">
-        <header class="grid_header">
-            <center>memorandum</center>
-            
-        </header>
-        <nav class="grid_nav">nav</nav>
-        <main class="grid_main">main</main>
-        <aside class="grid_aside">aside</aside>
-        <footer class="grid_footer">footer</footer>
-    </div><!-- /.grid_container -->
+    <menu></menu>
 
-    <br>
-    <a href="https://cpprefjp.github.io/">cpprefjp</a>
-    <br>
-    <a href="https://docs.microsoft.com/ja-jp/">Microsoft Docs</a>
-    <br>
-    <a href="https://github.com/toutatsu">My Github</a>
-    <br>
-    <a href="https://developer.chrome.com/home">Chrome Extensions</a>
-    <br>
-    <a href="https://github.com/mnielsen/neural-networks-and-deep-learning">mnielsen:Neural Networks and Deep Learning</a>
-    <br>
-    <a href="http://www.htmq.com/">HTMLクイックリファレンス</a>
-    <br>
-    <a href="https://codepen.io/">codepen</a>
+    <header class="site-header">
 
-    
-    <br>
-    <a href="https://www.kaggle.com/">kaggle</a>
-    <br>
-    <a href="https://atcoder.jp/">AtCoder</a>
+        <h1>memo</h1>
+
+        <nav class="gnav">
+            <ul class="gnav__menu">
+                <li class="gnav__menu__item"><a href="./memo.html">memo</a></li>
+                <li class="gnav__menu__item"><a href="markdown/md_practice.html">md</a></li>
+            </ul>
+        </nav>
+
+        <nav class="breadcrumbs">
+            <ol>
+                <li class="crumb"><a href="http://toutatsu.github.io/">top</a></li>
+                <li class="crumb"><a href="#">a</a></li>
+            </ol>
+        </nav>
+
+    </header>
 
 
-    <br>
-    <a href="https://qiita.com/ryoi084/items/c4339996c50c0cf39df4">wslでmatplotlib</a>
+    <main>
 
-    
-    https://github.com/calebmadrigal/FourierTalkOSCON
+        <nav class="menu">
+            nav
+        </nav>
 
-    
+
+        <article>
+            <br>
+            <a href="./memo.html">memo</a>
+            <br>
+            <br>
+            <a href="markdown/md_practice.html">md_practice</a>
+            <br>
+
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+            a
+            <br>
+        </article>
+
+
+        <aside>
+            aside
+            <br>
+            aside
+            <br>
+
+            更新<span id="koushin">...</span>
+            <script>
+                var koushin = document.getElementById("koushin");
+                function f() {
+                    if (koushin.textContent === "...") koushin.textContent = "";
+                    else if (koushin.textContent == "") koushin.textContent = ".";
+                    else if (koushin.textContent == ".") koushin.textContent = "..";
+                    else if (koushin.textContent == "..") koushin.textContent = "...";
+                }
+                setInterval(f, 1000);
+            </script>
+            <br>
+        </aside>
+
+    </main>
+
+    <footer class="site-footer">
+        <br>
+        <a href="https://github.com/toutatsu/">Github</a>
+        <a href="">あ</a>
+        <br>
+        <p class="copyright">t</p>
+    </footer>
+
 </body>
+
 </html>
