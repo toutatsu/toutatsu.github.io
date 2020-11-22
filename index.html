@@ -16,8 +16,12 @@
 
     <!--favico-->
     <link rel="shortcut icon" href="favicon.ico">
+    <!-- javascript -->
+    <link rel="text/javascript" href="index.js">
     <!-- css -->
     <link rel="stylesheet" href="index.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
 </head>
 
@@ -29,21 +33,22 @@
 
         <h1>memo</h1>
 
-        <nav class="gnav">
-            <ul class="gnav__menu">
-                <li class="gnav__menu__item"><a href="./memo.html">memo</a></li>
-                <li class="gnav__menu__item"><a href="markdown/md_practice.html">md</a></li>
-            </ul>
-        </nav>
-
-        <nav class="breadcrumbs">
-            <ol>
-                <li class="crumb"><a href="http://toutatsu.github.io/">top</a></li>
-                <li class="crumb"><a href="#">a</a></li>
-            </ol>
-        </nav>
 
     </header>
+
+    <nav class="gnav">
+        <ul class="gnav__menu">
+            <li class="gnav__menu__item"><a href="./memo.html">memo</a></li>
+            <li class="gnav__menu__item"><a href="markdown/md_practice.html">md</a></li>
+        </ul>
+    </nav>
+
+    <nav class="breadcrumbs">
+        <ol>
+            <li class="crumb"><a href="http://toutatsu.github.io/">top</a></li>
+            <li class="crumb"><a href="#">a</a></li>
+        </ol>
+    </nav>
 
 
     <main>
@@ -61,7 +66,7 @@
             <a href="markdown/md_practice.html">md_practice</a>
             <br>
 
-            a
+            
             <br>
             a
             <br>
@@ -103,7 +108,7 @@
             <br>
             a
             <br>
-            a
+            i
             <br>
         </article>
 
@@ -132,11 +137,28 @@
 
     <footer class="site-footer">
         <br>
-        <a href="https://github.com/toutatsu/">Github</a>
-        <a href="">あ</a>
+        
+            <a href="https://github.com/toutatsu/"><i class="fab fa-github"></i></a>
+
         <br>
         <p class="copyright">t</p>
+
+
+        
+        
     </footer>
+
+
+    <script>
+
+        (function () {
+            var timer;
+            window.addEventListener("DOMContentLoaded", function () {
+                timer = setInterval('location.reload()', 10000);
+            }, false);
+        }());
+
+    </script>
 
 </body>
 

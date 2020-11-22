@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--Document Type Definition HTML 5であることを明記-->
+<html lang="ja">
+<!--日本語-->
+
+<head>
+    <!--文字エンコーディングの指定-->
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--タイトル-->
+    <title>top page</title>
+
+    <!--href:外部ソースのURL rel:現在のファイルとの関係-->
+
+    <!--favico-->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- javascript -->
+    <script type="text/javascript" src="index.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="index.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
+</head>
+
+<body>
+
+    <menu></menu>
+
+    <header class="site-header">
+
+        <h1>memo</h1>
+
+
+    </header>
+
+    <nav class="gnav">
+        <ul class="gnav__menu">
+            <li class="gnav__menu__item"><a href="./memo.html">memo</a></li>
+            <li class="gnav__menu__item"><a href="markdown/md_practice.html">md</a></li>
+        </ul>
+    </nav>
+
+    <nav class="breadcrumbs">
+        <ol>
+            <li class="crumb"><a href="http://toutatsu.github.io/">top</a></li>
+            <li class="crumb"><a href="#">a</a></li>
+        </ol>
+    </nav>
+
+
+    <main>
+
+        <nav class="menu">
+            nav
+        </nav>
+
+
+        <article>
+
+            <div id="md">
+                aaaaa
+            </div>
+            
+
+        </article>
+
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script src="../markdown/md_practice.md"></script>
+        <!-- <script src="https://raw.githubusercontent.com/toutatsu/sound/main/README.md?token=ANSHFZCQ2TKF7U3CNZMPPNS7XIRXI"></script> -->
+
+
+        <aside>
+            aside
+            <br>
+            aside
+            <br>
+
+            更新<span id="koushin">...</span>
+            <script>
+                var koushin = document.getElementById("koushin");
+                function f() {
+                    if (koushin.textContent === "...") koushin.textContent = "";
+                    else if (koushin.textContent == "") koushin.textContent = ".";
+                    else if (koushin.textContent == ".") koushin.textContent = "..";
+                    else if (koushin.textContent == "..") koushin.textContent = "...";
+                }
+                setInterval(f, 1000);
+            </script>
+            <br>
+        </aside>
+
+    </main>
+
+    <footer class="site-footer">
+        <br>
+            <a href="https://github.com/toutatsu/"><i class="fab fa-github"></i></a>
+        <br>
+        <p class="copyright">t</p>
+        
+    </footer>
+
+</body>
+
+</html>
