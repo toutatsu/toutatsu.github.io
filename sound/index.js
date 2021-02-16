@@ -1,10 +1,7 @@
 const request = new XMLHttpRequest();
-<<<<<<< HEAD
 request.open('GET','https://gist.githubusercontent.com/rt2zz/e0a1d6ab2682d2c47746950b84c0b6ee/raw/83b8b4814c3417111b9b9bef86a552608506603e/markdown-sample.md', true);
-=======
 
-request.open('GET', 'https://raw.githubusercontent.com/toutatsu/toutatsu.github.io/main/README.md', true);
->>>>>>> e9ed5945bc6be7ae59c723f7cf9984a60fc0594f
+// request.open('GET', 'https://raw.githubusercontent.com/toutatsu/toutatsu.github.io/main/README.md', true);
 request.send();
 
 //読み込んでから
