@@ -1,12 +1,11 @@
 const request = new XMLHttpRequest();
-
-request.open('GET', 'https://raw.githubusercontent.com/toutatsu/first_repository/master/README.md?token=ANSHFZG53KDA4RXRZNXI7A27XI47W', true);
+request.open('GET','https://gist.githubusercontent.com/rt2zz/e0a1d6ab2682d2c47746950b84c0b6ee/raw/83b8b4814c3417111b9b9bef86a552608506603e/markdown-sample.md', true);
 request.send();
 
 //読み込んでから
 window.onload = function(){
+
     var article=document.getElementById('md');
-    alert(article.innerHTML);
     try {
         article.innerHTML = marked(request.responseText.split('\\`').join('`'));
     } catch (e) {
