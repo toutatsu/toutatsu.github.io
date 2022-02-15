@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--タイトル-->
-    <title>top page</title>
+    <title>toutatsu Gihub Pages</title>
 
     <!--href:外部ソースのURL rel:現在のファイルとの関係-->
 
@@ -20,20 +20,16 @@
     <link rel="text/javascript" href="index.js">
     <!-- css -->
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="header.css">
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
 </head>
 
+
 <body>
 
-    <menu></menu>
-
-    <header class="site-header">
-
-        <h1>memo</h1>
-
-    </header>
+    <iframe src="header.html" frameborder="0"></iframe>
 
     <nav class="gnav">
         <ul class="gnav__menu">
@@ -42,78 +38,41 @@
         </ul>
     </nav>
 
-    <nav class="breadcrumbs">
+    <!-- <nav class="breadcrumbs">
         <ol>
             <li class="crumb"><a href="http://toutatsu.github.io/">top</a></li>
             <li class="crumb"><a href="#">a</a></li>
         </ol>
     </nav>
+ -->
 
 
     <main>
 
-        <nav class="menu">
+        <aside id='sidebar-left'>
             左メニュー
-        </nav>
+        </aside>
 
+        <article id='article'></article>
 
-        <article>
-            <br>
-            <a href="./memo.html">memo</a>
-            <br>
-            <br>
-            <a href="markdown/md_practice.html">md_practice</a>
-            <br>
-
-        </article>
-
-
-        <aside>
+        <aside id='sidebar-right'>
             右メニュー
-            <br>
-
-
-            更新<span id="koushin">...</span>
-            <script>
-                var koushin = document.getElementById("koushin");
-                function f() {
-                    if (koushin.textContent === "...") koushin.textContent = "";
-                    else if (koushin.textContent == "") koushin.textContent = ".";
-                    else if (koushin.textContent == ".") koushin.textContent = "..";
-                    else if (koushin.textContent == "..") koushin.textContent = "...";
-                }
-                setInterval(f, 1000);
-            </script>
-            <br>
         </aside>
 
     </main>
 
-    <footer class="site-footer">
-        <br>
-        
-            <a href="https://github.com/toutatsu/"><i class="fab fa-github"></i></a>
+    <iframe src="footer.html" frameborder="0"></iframe>
 
-        <br>
-        <p class="copyright">t</p>
-
-
-        
-        
-    </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
 
     <script>
+        var Markdown= new XMLHttpRequest();
 
-        (function () {
-            var timer;
-            window.addEventListener("DOMContentLoaded", function () {
-                timer = setInterval('location.reload()', 10000);
-            }, false);
-        }());
+        Markdown.open("GET", 'https://raw.githubusercontent.com/toutatsu/git_practice/main/README.md', false);
+        Markdown.send(null);
+        document.getElementById('article').innerHTML = marked(Markdown.responseText)+'<br><br>'
 
     </script>
-
 </body>
 
 </html>

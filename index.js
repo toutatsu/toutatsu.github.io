@@ -1,15 +1,15 @@
-var _window = $(window),
-    _header = $('.nav'),
-    heroBottom;
+// var _window = $(window),
+//     _header = $('.nav'),
+//     heroBottom;
 
-_window.on('scroll',function(){     
-    heroBottom = $('.header').height();
-    if(_window.scrollTop() > heroBottom){
-        _header.addClass('fixed');   
-    }
-    else{
-        _header.removeClass('fixed');   
-    }
-});
+// _window.on('scroll',function(){     
+//     heroBottom = $('.header').height();
+//     if(_window.scrollTop() > heroBottom){
+//         _header.addClass('fixed');   
+//     }
+//     else{
+//         _header.removeClass('fixed');   
+//     }
+// });
 
-_window.trigger('scroll');
+// _window.trigger('scroll');
