@@ -1,0 +1,86 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/* body{
+
+}
+
+/* header */
+.site-header{
+    color: white;
+    text-align: center;
+    background:rgb(1, 9, 77);
+    height: 50px;
+}
+
+
+/* nav */
+.gnav__menu{
+    display: flex;
+    justify-content: space-around;
+    background-color: skyblue;
+}
+.gnav__menu__item{
+    color: #BAFCDE;
+}
+.gnav__menu__item a{
+    color: rgb(6, 41, 87);
+    /* text-decoration: dashed; */
+}
+
+
+
+/* main */
+main{
+    padding: auto;
+    overflow: hidden;
+}
+
+/* article */
+article {
+    float: left;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 70%;
+    background-color:ghostwhite;
+    height: auto;
+}
+
+/* sidebar */
+aside{
+    height: max-content;
+    background-color: bisque;
+    height: 100%;
+}
+.left-sidebar {
+    width:10%;
+    float:left;
+}
+.right-sidebar {
+    width:10%;
+    float: left;
+}
+
+/* footer */
+.site-footer{
+    color: white;
+    text-align: center;
+    font-size: small;
+    width:100%;
+    margin-bottom: 0;
+    margin-top: auto;
+    position: relative;
+    background:black;
+}
+
+.copyright{
+    color:gray;
+    font-size: small;
+    text-align: center;
+}
+
+.fab fa-github{
+    color: wheat;
+}

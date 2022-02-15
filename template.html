@@ -4,49 +4,36 @@
 <html lang="ja">
 
 <head>
-    <!--日本語-->
-    <!--文字エンコーディングの指定-->
-    <meta charset="UTF-8">
-    <!-- ビューポートの初期サイズ -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--タイトル-->
-    <title>toutatsu Gihub Pages template</title>
-
-    <!--href:外部ソースのURL rel:現在のファイルとの関係-->
-    <!--favico-->
-    <link rel="shortcut icon" href="favicon.ico">
-
-    <!-- javascript -->
-    <link rel="text/javascript" href="index.js">
-    <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- markedjs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
-
-    <!-- css -->
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="header.css">
-    <!-- fontawesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <!--タイトル--><title>toutatsu Gihub Pages template</title>
+    <script src="template.js"></script>
 </head>
-
 <body>
-    <!-- header -->
-    <script>
-        $.ajax({
-            url: "header.html",
-            cache: false,
-            success: function (html) { document.write(html); }
-        });
-    </script>
+    
 
-    <script>
-        $.ajax({
-            url: "footer.html",
-            cache: false,
-            success: function (html) { document.write(html); }
-        });
-    </script>
+    <main>
+        <article>
+            <h1>head</h1>
+            template.html
+            <br>
+
+            テンプレート用html
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+            <script>
+                var Markdown= new XMLHttpRequest();
+        
+                Markdown.open("GET", 'https://raw.githubusercontent.com/toutatsu/git_practice/main/README.md', false);
+                Markdown.send(null);
+                document.body.getElementsByTagName('article')[0].insertAdjacentHTML('beforeEnd',marked(Markdown.responseText))
+            </script>
+
+            <script>
+                var Markdown= new XMLHttpRequest();
+
+                Markdown.open("GET", 'https://raw.githubusercontent.com/toutatsu/toutatsu.github.io/main/markdown/md_practice.md', false);
+                Markdown.send(null);
+                document.body.getElementsByTagName('article')[0].insertAdjacentHTML('beforeEnd',marked(Markdown.responseText))
+            </script>
+        </article>
+    </main>
 </body>
-
-</html>

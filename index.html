@@ -1,78 +1,16 @@
 <!DOCTYPE html>
 <!--Document Type Definition HTML 5であることを明記-->
+
 <html lang="ja">
-<!--日本語-->
 
 <head>
-    <!--文字エンコーディングの指定-->
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--タイトル-->
-    <title>toutatsu Gihub Pages</title>
-
-    <!--href:外部ソースのURL rel:現在のファイルとの関係-->
-
-    <!--favico-->
-    <link rel="shortcut icon" href="favicon.ico">
-    <!-- javascript -->
-    <link rel="text/javascript" href="index.js">
-    <!-- css -->
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="header.css">
-    <!-- fontawesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-
+    <!--タイトル--><title>toutatsu Gihub Pages template</title>
+    <script src="template.js"></script>
 </head>
-
-
 <body>
-
-    <iframe src="header.html" frameborder="0"></iframe>
-
-    <nav class="gnav">
-        <ul class="gnav__menu">
-            <li class="gnav__menu__item"><a href="./memo.html">memo</a></li>
-            <li class="gnav__menu__item"><a href="markdown/md_practice.html">md</a></li>
-        </ul>
-    </nav>
-
-    <!-- <nav class="breadcrumbs">
-        <ol>
-            <li class="crumb"><a href="http://toutatsu.github.io/">top</a></li>
-            <li class="crumb"><a href="#">a</a></li>
-        </ol>
-    </nav>
- -->
-
-
     <main>
-
-        <aside id='sidebar-left'>
-            左メニュー
-        </aside>
-
-        <article id='article'></article>
-
-        <aside id='sidebar-right'>
-            右メニュー
-        </aside>
-
+        <article style="text-align: center;">
+            <h2>under maintenance</h2>
+        </article>
     </main>
-
-    <iframe src="footer.html" frameborder="0"></iframe>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
-
-    <script>
-        var Markdown= new XMLHttpRequest();
-
-        Markdown.open("GET", 'https://raw.githubusercontent.com/toutatsu/git_practice/main/README.md', false);
-        Markdown.send(null);
-        document.getElementById('article').innerHTML = marked(Markdown.responseText)+'<br><br>'
-
-    </script>
 </body>
-
-</html>
