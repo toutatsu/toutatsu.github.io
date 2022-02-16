@@ -29,7 +29,7 @@ window.onload = function() {
     //body template
     document.body.insertAdjacentHTML('afterbegin','<header class="site-header"><h1>notes</h1></header>')
 
-    document.body.getElementsByTagName('main')[0].insertAdjacentHTML('beforeBegin','<nav class="gnav"><ul class="gnav__menu"><li class="gnav__menu__item"><a href="links">links</a></li><li class="gnav__menu__item"><a href="notes/markdown.html">markdown</a></li></ul></nav>')
+    document.body.getElementsByTagName('main')[0].insertAdjacentHTML('beforeBegin','<nav class="gnav"><ul class="gnav__menu"><li class="gnav__menu__item"><a href="/links/">links</a></li><li class="gnav__menu__item"><a href="/notes/markdown.html">markdown</a></li></ul></nav>')
     document.body.getElementsByTagName('main')[0].insertAdjacentHTML('afterBegin','<aside class="left-sidebar">左メニュー</aside>')
     document.body.getElementsByTagName('main')[0].insertAdjacentHTML('beforeEnd','<aside class="right-sidebar">右メニュー</aside>')
     document.body.insertAdjacentHTML('beforeEnd','<footer class="site-footer">github pages<a href="https://github.com/toutatsu/"><i class="fab fa-github"></i></a><br><p class="copyright">toutatsu</p></footer>')
