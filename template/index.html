@@ -5,11 +5,9 @@
 
 <head>
     <!--タイトル--><title>toutatsu Gihub Pages template</title>
-    <script src="template.js"></script>
+    <script src='/template/template.js'></script>
 </head>
 <body>
-    
-
     <main>
         <article>
             <h1>head</h1>
@@ -17,20 +15,12 @@
             <br>
 
             テンプレート用html
-        
+
             <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
             <script>
                 var Markdown= new XMLHttpRequest();
         
                 Markdown.open("GET", 'https://raw.githubusercontent.com/toutatsu/git_practice/main/README.md', false);
-                Markdown.send(null);
-                document.body.getElementsByTagName('article')[0].insertAdjacentHTML('beforeEnd',marked(Markdown.responseText))
-            </script>
-
-            <script>
-                var Markdown= new XMLHttpRequest();
-
-                Markdown.open("GET", 'https://raw.githubusercontent.com/toutatsu/toutatsu.github.io/main/markdown/md_practice.md', false);
                 Markdown.send(null);
                 document.body.getElementsByTagName('article')[0].insertAdjacentHTML('beforeEnd',marked(Markdown.responseText))
             </script>
