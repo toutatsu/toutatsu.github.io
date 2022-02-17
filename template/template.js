@@ -14,9 +14,11 @@ document.head.insertAdjacentHTML('beforeEnd', '<!--ビューポートの初期�
 document.head.insertAdjacentHTML('beforeEnd', '<!--href:外部ソースのURL rel:現在のファイルとの関係-->');
 
 
-document.head.insertAdjacentHTML('beforeEnd', '<!--favico--><link rel="shortcut icon" href="favicon.ico">');
+document.head.insertAdjacentHTML('beforeEnd', '<!--favico--><link rel="shortcut icon" href="/favicon.ico">');
 document.head.insertAdjacentHTML('beforeEnd', '<!--jquery--><script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>');
-document.head.insertAdjacentHTML('beforeEnd', '<!--markedjs--><script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>');
+
+//TODO:template.jsから外部jsの読み込み
+// document.head.insertAdjacentHTML('beforeEnd', '<!--mathjax--><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>');
 
 document.head.insertAdjacentHTML('beforeEnd', '<!--css--><link rel="stylesheet" href="/template/template.css">');
 
