@@ -29,10 +29,73 @@ document.head.insertAdjacentHTML('beforeEnd', '<!-- ----------------------------
 
 window.onload = function() {
     //body template
-    document.body.insertAdjacentHTML('afterbegin','<header class="site-header"><h1>notes</h1></header>')
 
-    document.body.getElementsByTagName('main')[0].insertAdjacentHTML('beforeBegin','<nav class="gnav"><ul class="gnav__menu"><li class="gnav__menu__item"><a href="/links/">links</a></li><li class="gnav__menu__item"><a href="/notes/markdown.html">markdown</a></li></ul></nav>')
-    document.body.getElementsByTagName('main')[0].insertAdjacentHTML('afterBegin','<aside class="left-sidebar">左メニュー</aside>')
-    document.body.getElementsByTagName('main')[0].insertAdjacentHTML('beforeEnd','<aside class="right-sidebar">右メニュー</aside>')
-    document.body.insertAdjacentHTML('beforeEnd','<footer class="site-footer">github pages<a href="https://github.com/toutatsu/"><i class="fab fa-github"></i></a><br><p class="copyright">toutatsu</p></footer>')
+    const main = document.body.getElementsByTagName('main')[0];
+
+    const article = document.body.getElementsByTagName('article')[0];
+
+    //header
+    const header = document.createElement("header");
+    header.id='header';
+    const header_title = document.createElement('h1');
+    header_title.textContent='notes';
+    header.appendChild(header_title);
+    document.body.insertBefore(header,main);
+
+    //crumbs
+    const nav=document.createElement("p");
+    nav.className='crumbs'
+
+    const ul=document.createElement('ul')
+
+    var path=window.location.pathname.split('/')
+    if(path[path.length-1]=='')path[path.length-1]='index.html'//index.htmlの対応
+
+    for(var i=1;i<path.length;i++){
+        var crumb=document.createElement('li')
+        crumb.className='crumb'
+        var link=document.createElement('a')
+        link.href=window.location.origin+path.slice(0,i+1).join('/')
+        link.textContent=path[i]
+        console.log(path[i])
+        //window.location.origin+window.location.pathname
+        crumb.appendChild(link)
+        ul.appendChild(crumb)
+    }
+    nav.appendChild(ul)
+    header.insertAdjacentElement('afterEnd',nav)
+
+    //sidebar
+    const left_sidebar = document.createElement("aside");
+    left_sidebar.id='left-sidebar';
+    left_sidebar.textContent='左';
+    main.insertAdjacentElement('afterBegin',left_sidebar);
+
+    const right_sidebar = document.createElement("aside");
+    right_sidebar.id='right-sidebar';
+    right_sidebar.textContent='右';
+    main.insertAdjacentElement('beforeEnd',right_sidebar);
+
+    //footer
+    const footer = document.createElement("footer");
+    footer.id='footer';
+
+    const footer_title = document.createElement('h4');
+    footer_title.textContent='github pages';
+    footer.appendChild(footer_title);
+
+    const copyright = document.createElement("p");
+    copyright.id='copyright'
+    copyright.textContent='toutatsu'
+    footer.appendChild(copyright)
+
+    const github_link=document.createElement('a');
+    github_link.href='https://github.com/toutatsu/'
+
+    const github_icon = document.createElement("i");
+    github_icon.className='fab fa-github'
+    github_link.appendChild(github_icon)
+    footer.appendChild(github_link)
+
+    document.body.insertAdjacentElement('beforeEnd',footer);
 }
