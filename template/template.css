@@ -28,9 +28,9 @@ header{
 }
 
 .crumbs li:not(:first-child)::before {
-    content: "→";
+    content: ">";
     font-weight: bold;
-    padding: 0 3px;
+    padding: 0 10px;
     color: #000;
 }
 
