@@ -45,9 +45,17 @@ window.onload = function() {
     nav.className='crumbs'
 
     const ul=document.createElement('ul')
+    //home
+    var crumb=document.createElement('li')
+    crumb.className='crumb'
+    var link=document.createElement('a')
+    link.href=window.location.origin
+    link.textContent='home'
+    crumb.appendChild(link)
+    ul.appendChild(crumb)
 
     var path=window.location.pathname.split('/')
-    console.log(path)
+    //console.log(path)
     if(path[path.length-1]==''||path[path.length-1]=='index.html')path.pop();//index.html
     path[path.length-1]=path[path.length-1].replace('.html','')//拡張子削除
 
@@ -74,8 +82,41 @@ window.onload = function() {
 
     const right_sidebar = document.createElement("aside");
     right_sidebar.id='right-sidebar';
-    right_sidebar.textContent='右';
+    right_sidebar.textContent='目次';
+    let table_of_contents=document.createElement('div')
+    table_of_contents.id='table_of_contents'
+    right_sidebar.appendChild(table_of_contents)
     main.insertAdjacentElement('beforeEnd',right_sidebar);
+
+    //table of contents
+    //https://qiita.com/RYO_nami/items/10cb1db00b200e1288ca
+
+    function make_table_of_contents(element){
+        const heads = element.querySelectorAll('h1, h2, h3, h4, h5, h6');
+        // if (!heads || !heads.length) return
+        let contents = '';
+        heads.forEach((head, i) => {
+            let className = '';
+            switch(head.localName) {
+                case "h1":className=`contents1`;break;
+                case "h2":className=`contents2`;break;
+                case "h3":className=`contents3`;break;
+                case "h4":className=`contents4`;break;
+                case "h5":className=`contents5`;break;
+                case "h6":className=`contents6`;break;
+            }
+            contents += `<ul><a class="${className}" href="#${head.id}">${head.textContent}</a></ul>`;
+            //head.innerHTML += `<a id="head${i}"></a>`;
+        })
+        document.getElementById('table_of_contents').innerHTML += `<ol>${contents}</ol>`;
+    }
+
+    if (document.readyState === 'loading') {  // Loading hasn't finished yet
+        document.addEventListener('DOMContentLoaded', make_table_of_contents(main));
+    } else {  // `DOMContentLoaded` has already fired
+        make_table_of_contents(main);
+    }
+
 
     //footer
     const footer = document.createElement("footer");

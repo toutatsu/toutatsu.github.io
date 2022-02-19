@@ -64,6 +64,33 @@ aside{
     width:10%;
     float: left;
 }
+#table_of_contents ul{
+    color: aqua;
+    padding: 10px ;
+    font-size: small;
+    
+    
+}
+
+/* table of contents */
+.contents1 {
+    margin-left: 0px;
+}
+.contents2 {
+    margin-left: 15px;
+}
+.contents3 {
+    margin-left: 30px;
+}
+.contents4 {
+    margin-left: 45px;
+}
+.contents5 {
+    margin-left: 60px;
+}
+.contents6 {
+    margin-left: 75px;
+}
 
 /* footer */
 footer{

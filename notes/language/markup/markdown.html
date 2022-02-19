@@ -9,17 +9,13 @@
 </head>
 <body>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+    <script>
+        var Markdown= new XMLHttpRequest();
 
-    <main>
-        <article>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
-            <script>
-                var Markdown= new XMLHttpRequest();
+        Markdown.open("GET", 'https://raw.githubusercontent.com/toutatsu/git_practice/main/MARKDOWN.md', false);
+        Markdown.send(null);
+        document.body.insertAdjacentHTML('beforeEnd',marked(Markdown.responseText))
+    </script>
 
-                Markdown.open("GET", 'https://raw.githubusercontent.com/toutatsu/git_practice/main/MARKDOWN.md', false);
-                Markdown.send(null);
-                document.body.getElementsByTagName('article')[0].insertAdjacentHTML('beforeEnd',marked(Markdown.responseText)+'<br><br>')
-            </script>
-        </article>
-    </main>
 </body>
