@@ -30,9 +30,7 @@ document.head.insertAdjacentHTML('beforeEnd', '<!-- ----------------------------
 window.onload = function() {
     //body template
 
-    const main = document.body.getElementsByTagName('main')[0];
-
-    const article = document.body.getElementsByTagName('article')[0];
+    document.body.innerHTML='<main><article>'+document.body.innerHTML+'</article></main>'
 
     //header
     const header = document.createElement("header");
@@ -40,7 +38,7 @@ window.onload = function() {
     const header_title = document.createElement('h1');
     header_title.textContent='notes';
     header.appendChild(header_title);
-    document.body.insertBefore(header,main);
+    document.body.insertAdjacentElement('afterbegin',header);
 
     //crumbs
     const nav=document.createElement("p");
@@ -49,7 +47,9 @@ window.onload = function() {
     const ul=document.createElement('ul')
 
     var path=window.location.pathname.split('/')
-    if(path[path.length-1]=='')path[path.length-1]='index.html'//index.htmlの対応
+    console.log(path)
+    if(path[path.length-1]==''||path[path.length-1]=='index.html')path.pop();//index.html
+    path[path.length-1]=path[path.length-1].replace('.html','')//拡張子削除
 
     for(var i=1;i<path.length;i++){
         var crumb=document.createElement('li')
@@ -57,7 +57,7 @@ window.onload = function() {
         var link=document.createElement('a')
         link.href=window.location.origin+path.slice(0,i+1).join('/')
         link.textContent=path[i]
-        console.log(path[i])
+        // console.log(path[i])
         //window.location.origin+window.location.pathname
         crumb.appendChild(link)
         ul.appendChild(crumb)
@@ -65,6 +65,7 @@ window.onload = function() {
     nav.appendChild(ul)
     header.insertAdjacentElement('afterEnd',nav)
 
+    const main=document.body.getElementsByTagName('main')[0];
     //sidebar
     const left_sidebar = document.createElement("aside");
     left_sidebar.id='left-sidebar';
