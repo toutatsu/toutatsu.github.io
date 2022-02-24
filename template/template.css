@@ -2,16 +2,29 @@
     margin: 0px;
     padding: 0px;
 }
-/* body{
 
-}
+/* dark mode */
+/* @media(prefers-color-scheme: dark){
+  body {
+    background-color: #000;
+    color: #fff;
+  }
+} */
 
 /* header */
 header{
-    color: white;
-    text-align: center;
-    background:rgb(1, 9, 77);
-    height: 50px;
+    /* color: white; */
+    text-align: left;
+    padding-left: 15%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "Meiryo","ヒラギノ角ゴ",sans-serif;
+    /* font-size:x-large; */
+    /* background:rgb(1, 9, 77); */
+    height: 20%;
+}
+#header_title{
+    font-size: 200%;
 }
 
 
@@ -19,7 +32,7 @@ header{
 .crumbs{
     display: flex;
     justify-content: space-around;
-    background-color: skyblue;
+    background-color: beige;
 }
 
 .crumb{
@@ -36,6 +49,7 @@ header{
 
 /* main */
 main{
+    /* height:10cm; */
     padding: auto;
     overflow: hidden;
 }
@@ -46,22 +60,24 @@ article {
     padding-left: 5%;
     padding-right: 5%;
     width: 70%;
-    background-color:ghostwhite;
-    height: auto;
+    height: 100%;
+    /* background-color:ghostwhite; */
 }
 
 /* sidebar */
 aside{
     height: max-content;
-    background-color: bisque;
-    height: 100%;
+    background-color: rgb(234, 253, 232);
+    height: auto;
 }
 #left-sidebar {
     width:10%;
+    height: auto;
     float:left;
 }
 #right-sidebar {
     width:10%;
+    height: auto;
     float: left;
 }
 #table_of_contents ul{
@@ -98,6 +114,7 @@ footer{
     text-align: center;
     font-size: small;
     width:100%;
+    height: auto;
     margin-bottom: 0;
     margin-top: auto;
     position: relative;

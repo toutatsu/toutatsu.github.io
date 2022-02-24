@@ -24,23 +24,36 @@ document.head.insertAdjacentHTML('beforeEnd', '<!--css--><link rel="stylesheet" 
 
 document.head.insertAdjacentHTML('beforeEnd', '<!-- fontawesome --><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">');
 
-document.head.insertAdjacentHTML('beforeEnd', '<!-- ------------------------------template.js------------------------------ -->');
+window.onload = make_template
 
-
-window.onload = function() {
+function make_template() {
     //body template
-
     document.body.innerHTML='<main><article>'+document.body.innerHTML+'</article></main>'
 
     //header
-    const header = document.createElement("header");
-    header.id='header';
-    const header_title = document.createElement('h1');
-    header_title.textContent='notes';
-    header.appendChild(header_title);
-    document.body.insertAdjacentElement('afterbegin',header);
+    make_header()
 
     //crumbs
+    make_crumbs()
+
+    //sidebars
+    make_sidebars()
+    
+    //footer
+    make_footer()
+}
+
+function make_header(){
+    const header = document.createElement("header");
+    header.id='header';
+    const header_title = document.createElement('div');
+    header_title.id='header_title';
+    header_title.textContent='備忘録';
+    header.appendChild(header_title);
+    document.body.insertAdjacentElement('afterbegin',header);
+}
+
+function make_crumbs(){
     const nav=document.createElement("p");
     nav.className='crumbs'
 
@@ -73,12 +86,41 @@ window.onload = function() {
     nav.appendChild(ul)
     header.insertAdjacentElement('afterEnd',nav)
 
+}
+
+function make_sidebars(){
     const main=document.body.getElementsByTagName('main')[0];
     //sidebar
     const left_sidebar = document.createElement("aside");
     left_sidebar.id='left-sidebar';
     left_sidebar.textContent='左';
     main.insertAdjacentElement('afterBegin',left_sidebar);
+
+    //left-sidebar contents
+
+    var req = new XMLHttpRequest(); // HTTPでファイルを読み込むためのXMLHttpRrequestオブジェクトを生成
+    req.open("get", "contents.csv", true); // アクセスするファイルを指定
+    req.send(null); // HTTPリクエストの発行
+    
+    req.onload=function(){
+        var contents_csv=[];
+        var tmp = req.responseText.split("\r\n"); // 改行を区切り文字として行を要素とした配列を生成
+        // 各行ごとにカンマで区切った文字列を要素とした二次元配列を生成
+
+        for(var i=0;i<tmp.length;++i){
+            contents_csv[i] = tmp[i].split(',');
+        }
+        console.log(contents_csv)
+
+        let contents=""
+        for(var i=0;i<3;i++){
+            for(var j=0;j<contents_csv[i].length;j++){
+                contents+=`<ul><a class="${contents_csv[i][j]}" href="${contents_csv[i][j]}">${contents_csv[i][j]}</a></ul>`;
+            }
+        }
+        document.getElementById('left-sidebar').innerHTML += `<ol>${contents}</ol>`;
+    }
+    
 
     const right_sidebar = document.createElement("aside");
     right_sidebar.id='right-sidebar';
@@ -118,7 +160,9 @@ window.onload = function() {
     }
 
 
-    //footer
+}
+
+function make_footer(){
     const footer = document.createElement("footer");
     footer.id='footer';
 
