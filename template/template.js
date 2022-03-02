@@ -45,7 +45,7 @@ function make_template() {
 
 function make_header(){
     const header = document.createElement("header");
-    header.id='header';
+    header.id='header-template';
     const header_title = document.createElement('div');
     header_title.id='header_title';
     header_title.textContent='備忘録';
@@ -84,6 +84,8 @@ function make_crumbs(){
         ul.appendChild(crumb)
     }
     nav.appendChild(ul)
+
+    let header=document.getElementById('header-template');
     header.insertAdjacentElement('afterEnd',nav)
 
 }

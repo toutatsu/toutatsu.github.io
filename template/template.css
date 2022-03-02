@@ -20,7 +20,8 @@ header{
     padding-bottom: 10px;
     font-family: "Meiryo","ヒラギノ角ゴ",sans-serif;
     /* font-size:x-large; */
-    /* background:rgb(1, 9, 77); */
+    color: white;
+    background:rgb(5, 10, 37);
     height: 20%;
 }
 #header_title{
@@ -32,7 +33,7 @@ header{
 .crumbs{
     display: flex;
     justify-content: space-around;
-    background-color: beige;
+    background-color: rgb(226, 239, 253);
 }
 
 .crumb{
@@ -49,9 +50,9 @@ header{
 
 /* main */
 main{
-    /* height:10cm; */
+    height: auto;
     padding: auto;
-    overflow: hidden;
+    display: flex;
 }
 
 /* article */
@@ -59,33 +60,29 @@ article {
     float: left;
     padding-left: 5%;
     padding-right: 5%;
+    /* height: max-content; */
     width: 70%;
-    height: 100%;
     /* background-color:ghostwhite; */
 }
 
 /* sidebar */
 aside{
-    height: max-content;
-    background-color: rgb(234, 253, 232);
-    height: auto;
+    min-height: 20cm;
+    /* height: 100%; */
+    background-color: rgba(236, 236, 236, 0.726);
 }
 #left-sidebar {
     width:10%;
-    height: auto;
     float:left;
 }
 #right-sidebar {
     width:10%;
-    height: auto;
     float: left;
 }
 #table_of_contents ul{
     color: aqua;
     padding: 10px ;
     font-size: small;
-    
-    
 }
 
 /* table of contents */
