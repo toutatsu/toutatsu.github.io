@@ -95,7 +95,7 @@ function make_sidebars(){
     //sidebar
     const left_sidebar = document.createElement("aside");
     left_sidebar.id='left-sidebar';
-    left_sidebar.textContent='左';
+    //left_sidebar.textContent='左メニュー';
     main.insertAdjacentElement('afterBegin',left_sidebar);
 
     //left-sidebar contents
@@ -116,8 +116,9 @@ function make_sidebars(){
 
         let contents=""
         for(var i=0;i<3;i++){
+            contents+=['現在地','ディレクトリ','コンテンツ'][i]
             for(var j=0;j<contents_csv[i].length;j++){
-                contents+=`<ul><a class="${contents_csv[i][j]}" href="${contents_csv[i][j]}">${contents_csv[i][j]}</a></ul>`;
+                contents+=`<ul><a class="${contents_csv[i][j]}" href="${i==0?".":contents_csv[i][j]}">${contents_csv[i][j]}</a></ul>`;
             }
         }
         document.getElementById('left-sidebar').innerHTML += `<ol>${contents}</ol>`;
