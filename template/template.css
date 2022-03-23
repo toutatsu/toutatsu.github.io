@@ -129,8 +129,12 @@ footer{
 }
 
 pre code {/*code block*/
-    background-color: #eee;
-    border: 1px solid #999;
+    font-size: large;
+    border: 3px solid darkblue;
     display: block;
-    padding: 20px;
+    padding: 10px;
+}
+
+.copy_button {
+    float: right;
 }

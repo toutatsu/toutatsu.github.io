@@ -188,3 +188,17 @@ function make_footer(){
 
     document.body.insertAdjacentElement('beforeEnd',footer);
 }
+
+const clipbordCopy = id =>{
+            
+    var text=document.getElementById(id).innerText
+
+    if(!navigator.clipboard){
+        console.log("クリップボードにコピーできませんでした");return false;
+    }
+    navigator.clipboard.writeText(text).then(
+        ()=>console.log("クリップボードにコピーしました"),
+        ()=>console.log("クリップボードにコピーできませんでした")
+    );
+    return true;
+};
