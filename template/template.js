@@ -189,7 +189,7 @@ function make_footer(){
     document.body.insertAdjacentElement('beforeEnd',footer);
 }
 
-const clipbordCopy = id =>{
+const clipboardCopy = id =>{
             
     var text=document.getElementById(id).innerText
 
