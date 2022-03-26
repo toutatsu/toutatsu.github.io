@@ -31,16 +31,21 @@
     <h2 id="prettyprint">コードブロック:prettyprint</h2>
     <p>下記のコードは<a href="">prettyprint</a>を使ってコードを読みやすくしています</p>
     <br>
+    
 
     clipboard API
     <br>
     https://developer.mozilla.org/ja/docs/Web/API/Clipboard
     <br>
+
+    <a href="https://example.com">example.com</a>
+
+    
     
     
 
     <br>
-    <button onclick="clipbordCopy('c sample')" class="copy_button">Copy</button>
+    <button onclick="clipboardCopy('c sample')" class="copy_button">Copy</button>
     <pre id="c sample"><code class="prettyprint lang-c">#include<stdio.h>
 using namespace std;
 int main(){
@@ -48,13 +53,13 @@ int main(){
 }</code></pre>
 
     <br>
-    <button onclick="clipbordCopy('html sample')" class="copy_button">Copy</button>
+    <button onclick="clipboardCopy('html sample')" class="copy_button">Copy</button>
     <pre id="html sample"><code class="prettyprint">.elem {
     font-size: 16px;
 }</code></pre>
 
     <br>
-    <button onclick="clipbordCopy('css sample')" class="copy_button">Copy</button>
+    <button onclick="clipboardCopy('css sample')" class="copy_button">Copy</button>
     <pre id="css sample"><code class="prettyprint lang-css linenums">.some-box {
     width: 20px;
     height: 20px;
@@ -64,8 +69,8 @@ int main(){
 
     <!-- javascript sample -->
     <br>
-    <button onclick="clipbordCopy('javascript sample')" class="copy_button">Copy</button>
-    <pre id="javascript sample"><code class="prettyprint lang-javascript">const clipbordCopy = id =>{
+    <button onclick="clipboardCopy('javascript sample')" class="copy_button">Copy</button>
+    <pre id="javascript sample"><code class="prettyprint lang-javascript">const clipboardCopy = id =>{
             
     var text=document.getElementById(id).innerText
 
@@ -81,7 +86,7 @@ int main(){
 
     <!-- cpp sample -->
     <br>
-    <button onclick="clipbordCopy('cpp sample')" class="copy_button">Copy</button>
+    <button onclick="clipboardCopy('cpp sample')" class="copy_button">Copy</button>
     <pre id="cpp sample"><code class="prettyprint lang-cpp">#include<iostream>
 #include<vector>
 #include<cmath>//for sqrt
