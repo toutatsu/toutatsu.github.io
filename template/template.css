@@ -70,6 +70,7 @@ aside{
     min-height: 20cm;
     /* height: 100%; */
     background-color: rgba(236, 236, 236, 0.726);
+    overflow: scroll;
 }
 #left-sidebar {
     width:10%;
@@ -133,8 +134,9 @@ pre code {/*code block*/
     border: 3px solid darkblue;
     display: block;
     padding: 10px;
+    overflow: scroll;
 }
 
 .copy_button {
-    float: right;
+    /* float: right; */
 }
