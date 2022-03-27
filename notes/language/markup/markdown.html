@@ -6,16 +6,40 @@
 <head>
     <!--タイトル--><title>markdown</title>
     <script src="/template/template.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
 </head>
 <body>
-    
+    <br>
+    <h1>Markdown sample</h1>
+    <br>
+    load script
+    <br>
+    <button onclick="clipboardCopy('markdown load sample')" class="copy_button">Copy</button>
+    <pre><code id="markdown load sample" class="prettyprint lang-javascript">var Markdown= new XMLHttpRequest();
+Markdown.open("GET", 'MARKDOWN.md', false);
+Markdown.send(null);
+document.body.insertAdjacentHTML('beforeEnd',marked(Markdown.responseText))</code></pre>
+    <br>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+
     <script>
         var Markdown= new XMLHttpRequest();
 
-        Markdown.open("GET", 'https://raw.githubusercontent.com/toutatsu/git_practice/main/MARKDOWN.md', false);
+        Markdown.open("GET", 'MARKDOWN.md', false);
         Markdown.send(null);
         document.body.insertAdjacentHTML('beforeEnd',marked(Markdown.responseText))
+    
     </script>
+
+    <br><br><br><br><br><br>
+
+
+    <!-- <script>
+        var Markdown= new XMLHttpRequest();
+
+        Markdown.open("GET", 'https://gist.githubusercontent.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa/raw/2f7b0777de09c22e40b148400c6e57814c173450/markdown-cheatsheet.md', false);
+        Markdown.send(null);
+        document.body.insertAdjacentHTML('beforeEnd',marked(Markdown.responseText))
+    </script> -->
 
 </body>
