@@ -169,7 +169,7 @@ function make_footer(){
     const footer = document.createElement("footer");
     footer.id='footer';
 
-    const footer_title = document.createElement('h4');
+    const footer_title = document.createElement('div');
     footer_title.textContent='github pages';
     footer.appendChild(footer_title);
 
