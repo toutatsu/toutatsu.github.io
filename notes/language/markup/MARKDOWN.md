@@ -13,9 +13,10 @@
 >[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 <br>
+<http://example.com|議論マイニングっぽいコンペ>
 
 ---
-
+aaaa
 <br>
 
 ## Source Code Block
@@ -25,7 +26,7 @@
 some code
 ```
 ````
-
+<br>
 ```c
 #include<stdio.h>
 int main(void){
@@ -198,13 +199,13 @@ print("Hello World!")
 
 ## Details
 ````markdown
-<details><summary>sample code</summary><div>
+<details><summary>sample code</summary></details>
 
 ```python
 print('Hello, World'!)
 ```
 ````
-<details><summary>sample code</summary><div>
+<details><summary>sample code</summary></details>
 
 ```python
 print('Hello, World'!)
@@ -226,6 +227,18 @@ print('Hello, World'!)
 
 ---
 
+## Table
+
+```markdown
+| Left align | Right align | Center align |
+|:-----------|------------:|:------------:|
+| This       | This        | This         |
+| column     | column      | column       |
+| will       | will        | will         |
+| be         | be          | be           |
+| left       | right       | center       |
+| aligned    | aligned     | aligned      |
+```
 <br>
 
 | Left align | Right align | Center align |
@@ -252,12 +265,11 @@ e^{i\pi}+1=0\\
 
 \underline{underline}\\
 \underline{\underline{doubleunderline}}\\
-
 $$
 
 
 | \tiny | \scriptsize | \footnotesize | \normalsize | \large | \LARGE | \huge | \HUGE |
-|:-----:|:-----------:|:-------------:|:-----------:|:------:|:------:|:-----:|:-----:|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |$$\tiny ABC$$|$$\scriptsize ABC$$|$$\footnotesize ABC$$|$$\normalsize ABC$$|$$\large ABC$$|$$\LARGE ABC$$|$$\huge ABC$$|$$\Huge ABC$$|
 
 <br>

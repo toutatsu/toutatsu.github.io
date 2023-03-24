@@ -67,7 +67,7 @@ article {
 
 /* sidebar */
 aside{
-    min-height: 20cm;
+    min-height: 100vh;
     /* height: 100%; */
     background-color: rgba(236, 236, 236, 0.726);
     overflow: scroll;
