@@ -1,0 +1,19 @@
+services:
+
+    node:
+        image: "node:latest"
+
+        working_dir: /home/node/
+
+        container_name: gh-pages-node-container
+        hostname: node
+
+        stdin_open: true
+        tty: true
+
+        volumes:
+            - .:/home/node/
+
+        ports:
+            - "4173:4173"
+            - "5173:5173"
